@@ -254,12 +254,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    //
+    /**
+     *
+     * Find where selectedElement is located in ElementList and then change the color of the
+     * Element.
+     *
+     */
+
     public void colorSetter()
     {
-
+        //loops through array.
         for(int i = 0; i < mainView.changeElementList.length;i++)
         {
+            //gets the hex value of the elementRGBVal and sets it
             int hexInt = Color.argb(255,elementRedVal,elementGreenVal,elementBlueVal);
             if(selectedElement.equals(mainView.changeElementList[i]))
             {
