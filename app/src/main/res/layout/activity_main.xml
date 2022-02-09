@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/MainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="20dp"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/ObjectName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Object"
+        android:textSize="50dp" />
+
+    <com.example.harryvu_hwcustomcolor.DrawView
+        android:id="@+id/drawView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:id="@+id/SeekInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/SeekBarTextGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:gravity="right"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/RedTextSeek"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:gravity="right"
+                android:text="Red"
+                android:textColor="#F44336" />
+
+            <TextView
+                android:id="@+id/GreenTextSeek"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:gravity="right"
+                android:text="Green"
+                android:textColor="#4CAF50" />
+
+            <TextView
+                android:id="@+id/BlueTextSeek"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:gravity="right"
+                android:text="Blue"
+                android:textColor="#2196F3" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/SeekBarGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <SeekBar
+                android:id="@+id/RedSeek"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:max="255"
+                android:progress="255"
+                android:progressTint="#F44336" />
+
+            <SeekBar
+                android:id="@+id/GreenSeek"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:max="255"
+                android:progress="255"
+                android:progressTint="#4CAF50" />
+
+            <SeekBar
+                android:id="@+id/BlueSeek"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:max="255"
+                android:progress="255"
+                android:progressTint="#2196F3" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/SeekBarValueGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_weight="0"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/RedValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="255" />
+
+            <TextView
+                android:id="@+id/GreenValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="255" />
+
+            <TextView
+                android:id="@+id/BlueValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="255" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
