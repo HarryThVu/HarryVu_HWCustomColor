@@ -19,59 +19,11 @@ import android.widget.TextView;
  * @version Winter 2022
  *
  */
-/**
- * External Citation 1
- *      Date: 2/8/2022
- *      Problem: I needed help on how to create a onTouch listener.
- *
- *      Resource:
- *          Youtube video tutorial
- *          link: https://www.youtube.com/watch?v=Rd89cVKrQBg
- *
- *      Solution: I modeled my after their example code.
- *
- */
 
-/**
- * External Citation 2
- *      Date: 2/8/2022
- *      Problem: I did not know how to multiple seekbars in main activity.
- *
- *      Resource:
- *          Youtube video tutorial
- *          link: https://www.youtube.com/watch?v=AM6lJnze9nA
- *
- *      Solution: I saw how the set up their and make mine similar to theirs.
- *
- */
 
-/**
- * External Citation 3
- *      Date: 2/8/2022
- *      Problem: I was struggling to get the .getColor() method to work.
- *
- *      Resource:
- *          Classmate: Anne-Marie
- *          Code that helped: Color.blue(selectedElement.getColor())
- *
- *      Solution: Just used that so that I can get the RGB values for element.
- *
- */
 
-/**
- * External Citation 4
- *      Date: 2/8/2022
- *      Problem: Need to find how to set progress bar.
- *
- *      Resource:
- *          Stack overFlow
- *          Link: https://stackoverflow.com/questions/9792888/android-seekbar-set-progress-value
- *
- *      Solution: Found the .setProgress() and used it.
- *
- */
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
+{
 
     //Instance variables for the (x,y) of on touch, the current element and its' colors, and the DrawView surface.
     private int x;
@@ -98,7 +50,8 @@ public class MainActivity extends AppCompatActivity {
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -115,11 +68,24 @@ public class MainActivity extends AppCompatActivity {
         //These create the seekbar listener and connects it with the text view
         //for each button. It also changes the save color values and
         //calls the colorSetter().
-        /** External Citation 1*/
-        rSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
+        /**
+         * External Citation 1
+         *      Date: 2/8/2022
+         *      Problem: I needed help on how to create a onTouch listener.
+         *
+         *      Resource:
+         *          Youtube video tutorial
+         *          link: https://www.youtube.com/watch?v=Rd89cVKrQBg
+         *
+         *      Solution: I modeled my after their example code.
+         *
+         */
+        rSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener()
+        {
 
             @Override
-            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b)
+            {
                 redVal.setText(""+ i);
                 elementRedVal = i;
                 colorSetter();
@@ -127,20 +93,24 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
+            public void onStartTrackingTouch(SeekBar seekBar)
+            {
 
             }
 
             @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
+            public void onStopTrackingTouch(SeekBar seekBar)
+            {
 
             }
         });
 
-        gSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
+        gSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener()
+        {
 
             @Override
-            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b)
+            {
                 greenVal.setText(""+ i);
                 elementGreenVal = i;
                 colorSetter();
@@ -148,20 +118,24 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
+            public void onStartTrackingTouch(SeekBar seekBar)
+            {
 
             }
 
             @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
+            public void onStopTrackingTouch(SeekBar seekBar)
+            {
 
             }
         });
 
-        bSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
+        bSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener()
+        {
 
             @Override
-            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b)
+            {
                 blueVal.setText(""+ i);
                 elementBlueVal = i;
                 colorSetter();
@@ -169,12 +143,14 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
+            public void onStartTrackingTouch(SeekBar seekBar)
+            {
 
             }
 
             @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
+            public void onStopTrackingTouch(SeekBar seekBar)
+            {
 
             }
         });
@@ -182,10 +158,23 @@ public class MainActivity extends AppCompatActivity {
         //Sets up the TextView and also creates the onTouchlistener.
         //It will save the (x,y) cords of the location that the user touches.
         TextView selectedElementName = findViewById(R.id.ObjectName);
-        /** External Citation 2*/
-        mainView.setOnTouchListener(new View.OnTouchListener() {
+        /**
+         * External Citation 2
+         *      Date: 2/8/2022
+         *      Problem: I did not know how to multiple seekbars in main activity.
+         *
+         *      Resource:
+         *          Youtube video tutorial
+         *          link: https://www.youtube.com/watch?v=AM6lJnze9nA
+         *
+         *      Solution: I saw how the set up their and make mine similar to theirs.
+         *
+         */
+        mainView.setOnTouchListener(new View.OnTouchListener()
+        {
             @Override
-            public boolean onTouch(View view, MotionEvent event) {
+            public boolean onTouch(View view, MotionEvent event)
+            {
                 x = (int)event.getX();
                 y = (int)event.getY();
                 //Uses the findSelected method to see if the (x,y) cord is
@@ -198,7 +187,18 @@ public class MainActivity extends AppCompatActivity {
                     //the data from the Custom element to modify the view.
                     selectedElementName.setText(name);
                     colorValueExtract();
-                    /** External Citation 4*/
+                    /**
+                     * External Citation 4
+                     *      Date: 2/8/2022
+                     *      Problem: Need to find how to set progress bar.
+                     *
+                     *      Resource:
+                     *          Stack overFlow
+                     *          Link: https://stackoverflow.com/questions/9792888/android-seekbar-set-progress-value
+                     *
+                     *      Solution: Found the .setProgress() and used it.
+                     *
+                     */
                     rSeekBar.setProgress(elementRedVal);
                     gSeekBar.setProgress(elementGreenVal);
                     bSeekBar.setProgress(elementBlueVal);
@@ -243,9 +243,24 @@ public class MainActivity extends AppCompatActivity {
         return false;
     }
 
-    //Sets the element colors to the RGB value of the selected element.
-    /** External Citation 3*/
-    public void colorValueExtract() {
+    /**
+     * External Citation 3
+     *      Date: 2/8/2022
+     *      Problem: I was struggling to get the .getColor() method to work.
+     *
+     *      Resource:
+     *          Classmate: Anne-Marie
+     *          Code that helped: Color.blue(selectedElement.getColor())
+     *
+     *      Solution: Just used that so that I can get the RGB values for element.
+     *
+     */
+
+    /**
+     * Sets the element colors to the RGB value of the selected element variables to be used in other methods..
+     */
+    public void colorValueExtract()
+    {
 
         elementRedVal = Color.red(selectedElement.getColor());
         elementGreenVal = Color.green(selectedElement.getColor());

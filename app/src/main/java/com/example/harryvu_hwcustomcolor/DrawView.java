@@ -55,8 +55,11 @@ public class DrawView extends SurfaceView
     public CustomElement[] changeElementList;
 
 
-    //Constructor creates the new surface view
-    public DrawView(Context context, AttributeSet attrs) {
+    /**
+     * The constructor for the the DrawView surfaceView. It is where the instance variables are initialized.
+     */
+    public DrawView(Context context, AttributeSet attrs)
+    {
         super(context, attrs);
         setWillNotDraw(false);
 
@@ -83,7 +86,9 @@ public class DrawView extends SurfaceView
     }
 
 
-    //This Overrides the original onDraw Method.
+    /**
+     * This is where the onDraw method is override and is also where surface view is being draw.
+     */
     @Override
     public void onDraw(Canvas canvas)
     {
